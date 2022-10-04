@@ -1,3 +1,5 @@
+package sistemaBancario;
+
 public class Transferencia extends Movimiento {
 
     private String destino;
@@ -13,10 +15,8 @@ public class Transferencia extends Movimiento {
 
     @Override
     public String toString() {
-        return "\nFecha: " + fecha + " - $" + monto + "\n" +
-                "Transferencia - " + id + "\n" +
-                "Concepto: " + concepto + "\n" +
-                "Cuenta de origen: " + numeroDeCuenta + "\n" +
-                "Cuenta de destino: " + destino + "\n";
+        return "Fecha: " + this.fecha + ", Transferencia - " + this.id + ", monto:" + this.monto + ", Concepto: "
+                + this.concepto + ", Cuenta de origen: " + this.numeroDeCuenta + ", Cuenta de destino: " + this.destino
+                + "\n";
     }
 }

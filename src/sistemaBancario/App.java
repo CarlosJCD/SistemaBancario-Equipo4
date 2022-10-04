@@ -1,3 +1,5 @@
+package sistemaBancario;
+
 public class App {
     public static void main(String[] args) {
 
@@ -9,15 +11,15 @@ public class App {
         Cuenta1 c1 = new Cuenta1(abraham.getNumeroDeCliente());
         Cuenta2 c2 = new Cuenta2(abraham.getNumeroDeCliente());
 
-        c1.depositar(3000);
-        c1.transferir(c2, 200, "Transferencia entre cuentas");
+        fmatBank.unirCliente(abraham);
 
         abraham.agregarCuenta(c1);
         abraham.agregarCuenta(c2);
 
-        fmatBank.unirCliente(abraham);
+        c1.depositar(30000);
+        c1.transferir(c2, 400, "Despensa");
 
-        c1.getEstadoDeCuenta("03/09/2022", "03/11/2022");
+        c1.getEstadoDeCuenta("04/10/2022", "04/10/2022");
     }
 
 }

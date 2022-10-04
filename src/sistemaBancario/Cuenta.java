@@ -1,3 +1,5 @@
+package sistemaBancario;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -18,40 +20,33 @@ public abstract class Cuenta {
     }
 
     public void getEstadoDeCuenta(String fechaInicio, String fechaFinal) {
-
-        String nombreEstadoDeCuenta = "Estado de Cuenta --- " + Utileria.generarFecha();
-        File nuevoEstadoDeCuenta = new File(nombreEstadoDeCuenta + ".txt");
-
+        String rutaEstadoDeCuenta = "src/estadoDeCuenta" + this.numeroDeCuenta + ".txt";
+        File nuevoEstadoDeCuenta = new File(rutaEstadoDeCuenta);
+        File registro = new File("src/MovimientosFMAT.txt");
         try {
-            nuevoEstadoDeCuenta.createNewFile();
-            File registro = new File("../MovimientosFMAT.txt");
             Scanner lector = new Scanner(registro);
+            nuevoEstadoDeCuenta.createNewFile();
             FileWriter escritor = new FileWriter(nuevoEstadoDeCuenta);
-            boolean bandera = true;
 
-            while (lector.hasNextLine() && bandera) {
+            boolean bandera = false;
+            while (lector.hasNextLine()) {
                 String linea = lector.nextLine();
-                if (linea.contains("Fecha: " + fechaInicio)) {
-                    while (lector.hasNextLine() && bandera) {
-                        linea = lector.nextLine();
-                        escritor.write(linea);
-                        if (linea.contains("Fecha: " + fechaFinal)) {
-                            while (lector.hasNextLine() && bandera) {
-                                linea = lector.nextLine();
-                                escritor.write(linea);
-                                if (linea.contains("Cuenta de destino:")) {
-                                    bandera = false;
-                                    lector.close();
-                                    escritor.close();
-                                }
-                            }
-                        }
+                if (bandera) {
+                    escritor.write("\n" + linea);
+                    if (linea.contains("Fecha: " + fechaFinal)) {
+                        lector.close();
+                        escritor.close();
+                        break;
                     }
                 }
-            }
+                if (linea.contains("Fecha: " + fechaInicio)) {
+                    escritor.write(linea);
+                    bandera = true;
+                }
 
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getLocalizedMessage());
+            }
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getCause());
         }
 
     }
@@ -80,7 +75,7 @@ public abstract class Cuenta {
                 System.out.println("La cuenta a la que intenta depositar no existe.");
             }
 
-            new Transferencia(numeroDeCuenta, destino.numeroDeCliente, monto, concepto);
+            new Transferencia(numeroDeCuenta, destino.numeroDeCuenta, monto, concepto);
         }
     }
 

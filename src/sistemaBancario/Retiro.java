@@ -1,3 +1,5 @@
+package sistemaBancario;
+
 public class Retiro extends Movimiento {
 
     public Retiro(String numeroDeCuenta, double monto) {
@@ -8,8 +10,7 @@ public class Retiro extends Movimiento {
 
     @Override
     public String toString() {
-        return "\nFecha: " + fecha + " - $" + monto + "\n" +
-                "Retiro - " + id + "\n" +
-                "Cuenta de origen: " + numeroDeCuenta + "\n";
+        return "Fecha: " + this.fecha + ", $" + this.monto + ", Retiro - " + this.id + ",Cuenta de origen: "
+                + this.numeroDeCuenta + "\n";
     }
 }

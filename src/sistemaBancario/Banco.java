@@ -1,3 +1,5 @@
+package sistemaBancario;
+
 import java.io.*;
 
 class Banco {
@@ -5,7 +7,7 @@ class Banco {
     private String nombre;
     private Cliente[] clientes = new Cliente[2];
 
-    private final String path = "../ClientesFMAT.txt";
+    private final String path = "src/ClientesFMAT.txt";
 
     public Banco(String nombre) {
         this.nombre = nombre;
@@ -29,8 +31,8 @@ class Banco {
         }
     }
 
-    public void guardarCliente(Cliente nuevoCliente) {
-        
+    private void guardarCliente(Cliente nuevoCliente) {
+
         File file = new File(path);
 
         if (!(file.exists())) {
@@ -49,7 +51,7 @@ class Banco {
             }
 
             writer.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("No se ha podido escribir en el archivo de registro.");
         }
     }

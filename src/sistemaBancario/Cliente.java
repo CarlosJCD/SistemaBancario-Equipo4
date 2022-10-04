@@ -1,3 +1,5 @@
+package sistemaBancario;
+
 import java.util.Arrays;
 
 public class Cliente {
@@ -32,8 +34,8 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente: " + nombre + " " + apellido + "\n" + 
-               "Numero de cliente: " + numeroDeCliente + "\n" + 
-               "Cuentas: " + Arrays.toString(cuentas) + "\n";
+        return "Cliente: " + nombre + " " + apellido + "\n" +
+                "Numero de cliente: " + numeroDeCliente + "\n" +
+                "Cuentas: " + Arrays.toString(cuentas) + "\n";
     }
 }

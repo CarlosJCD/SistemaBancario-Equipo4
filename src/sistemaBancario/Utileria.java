@@ -1,8 +1,10 @@
+package sistemaBancario;
+
 import java.util.UUID;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Utileria {    
+public class Utileria {
     static String generarId() {
         return UUID.randomUUID().toString();
     }

@@ -1,3 +1,5 @@
+package sistemaBancario;
+
 import java.io.*;
 
 public abstract class Movimiento {
@@ -7,7 +9,7 @@ public abstract class Movimiento {
     protected double monto;
     protected String numeroDeCuenta;
 
-    private final String path = "../MovimientosFMAT.txt";
+    private final String path = "src/MovimientosFMAT.txt";
 
     public Movimiento(String numeroDeCuenta, double monto) {
         this.id = Utileria.generarId();
@@ -17,7 +19,7 @@ public abstract class Movimiento {
     }
 
     public void guardarMovimiento() {
-        
+
         File file = new File(path);
 
         if (!(file.exists())) {
@@ -36,7 +38,7 @@ public abstract class Movimiento {
             }
 
             writer.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("No se ha podido escribir en el archivo de registro.");
         }
     }
