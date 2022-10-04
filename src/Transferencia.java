@@ -1,5 +1,5 @@
 public class Transferencia extends Movimiento {
-    
+
     private String destino;
     private String concepto;
 
@@ -13,10 +13,10 @@ public class Transferencia extends Movimiento {
 
     @Override
     public String toString() {
-        return "\nTransferencia - " + id + "\n" + 
-               "Fecha: " + fecha + " - $" + monto + "\n" +
-               "Concepto: " + concepto + "\n" +
-               "Cuenta de origen: " + numeroDeCuenta + "\n" + 
-               "Cuenta de destino: " + destino + "\n";
+        return "\nFecha: " + fecha + " - $" + monto + "\n" +
+                "Transferencia - " + id + "\n" +
+                "Concepto: " + concepto + "\n" +
+                "Cuenta de origen: " + numeroDeCuenta + "\n" +
+                "Cuenta de destino: " + destino + "\n";
     }
 }

@@ -8,8 +8,8 @@ public class Retiro extends Movimiento {
 
     @Override
     public String toString() {
-        return "\nRetiro - " + id + "\n" + 
-               "Fecha: " + fecha + " - $" + monto + "\n" +
-               "Cuenta de origen: " + numeroDeCuenta + "\n";
+        return "\nFecha: " + fecha + " - $" + monto + "\n" +
+                "Retiro - " + id + "\n" +
+                "Cuenta de origen: " + numeroDeCuenta + "\n";
     }
 }

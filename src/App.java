@@ -1,6 +1,7 @@
 public class App {
     public static void main(String[] args) {
 
+        System.out.println();
         Banco fmatBank = new Banco("FMAT Bank");
 
         Cliente abraham = new Cliente("Abraham", "Espinosa");
@@ -15,5 +16,8 @@ public class App {
         abraham.agregarCuenta(c2);
 
         fmatBank.unirCliente(abraham);
+
+        c1.getEstadoDeCuenta("03/09/2022", "03/11/2022");
     }
+
 }

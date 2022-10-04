@@ -1,0 +1,10 @@
+Cliente: Abraham Espinosa
+Numero de cliente: 50ff6ea7-b031-4761-a184-6a91acef6a7a
+Cuentas: [
+Cuenta: 32aa8494-e02f-4dcd-a76c-1396093a9748 - Saldo: $2800.0, 
+Cuenta: 6ca9cb79-fcd8-4f0f-9e2c-e14427194fd1 - Saldo: $200.0, null]
+Cliente: Abraham Espinosa
+Numero de cliente: 0cfcd4be-957a-424e-9c09-a8356cf24c48
+Cuentas: [
+Cuenta: fd0942e4-ba82-47f4-868b-81d34eb9e514 - Saldo: $2800.0, 
+Cuenta: afca7302-d9db-4325-95bd-fa0054d41bb1 - Saldo: $200.0, null]

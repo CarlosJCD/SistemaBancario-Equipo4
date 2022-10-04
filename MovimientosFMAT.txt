@@ -1,0 +1,28 @@
+
+Fecha: 03/09/2022 - $3000.0
+Deposito - e002fff3-7519-43ea-872f-8c0438312db3
+Cuenta de destino: 32aa8494-e02f-4dcd-a76c-1396093a9748
+
+Fecha: 03/10/2022 - $200.0
+Deposito - 78c829fe-8436-46b2-9459-2ccbe0122cd5
+Cuenta de destino: 6ca9cb79-fcd8-4f0f-9e2c-e14427194fd1
+
+Fecha: 03/10/2022 - $200.0
+Transferencia - f362167c-0bfa-417d-9bdc-220e53929f11
+Concepto: Transferencia entre cuentas
+Cuenta de origen: 32aa8494-e02f-4dcd-a76c-1396093a9748
+Cuenta de destino: 50ff6ea7-b031-4761-a184-6a91acef6a7a
+
+Fecha: 03/10/2022 - $3000.0
+Deposito - 5d76a460-51b2-4b84-9f7c-1bd81d3f3ffc
+Cuenta de destino: fd0942e4-ba82-47f4-868b-81d34eb9e514
+
+Fecha: 03/11/2022 - $200.0
+Deposito - 96ac997b-4b9a-41bf-bceb-9b60f18c7331
+Cuenta de destino: afca7302-d9db-4325-95bd-fa0054d41bb1
+
+Fecha: 03/11/2022 - $200.0
+Transferencia - 847380da-3521-42a4-8902-bf1aa678e09a
+Concepto: Transferencia entre cuentas
+Cuenta de origen: fd0942e4-ba82-47f4-868b-81d34eb9e514
+Cuenta de destino: 0cfcd4be-957a-424e-9c09-a8356cf24c48
