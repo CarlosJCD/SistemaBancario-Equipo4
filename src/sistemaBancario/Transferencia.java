@@ -1,6 +1,6 @@
 package sistemaBancario;
 
-public class Transferencia extends Movimiento {
+public class Transferencia extends Transaccion {
 
     private String destino;
     private String concepto;

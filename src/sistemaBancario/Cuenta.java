@@ -7,12 +7,14 @@ public abstract class Cuenta {
 
     private String numeroDeCuenta;
     private String numeroDeCliente;
+    private String log_transacciones_path;
     private double saldo;
 
     public Cuenta(String numeroDeCliente) {
         this.numeroDeCuenta = Utileria.generarId();
         this.numeroDeCliente = numeroDeCliente;
         this.saldo = 0;
+        this.log_transacciones_path = "src/Historial_Transacciones_" + this.numeroDeCuenta + ".txt";
     }
 
     public double getSaldo() {
@@ -22,7 +24,7 @@ public abstract class Cuenta {
     public void getEstadoDeCuenta(String fechaInicio, String fechaFinal) {
         String rutaEstadoDeCuenta = "src/estadoDeCuenta" + this.numeroDeCuenta + ".txt";
         File nuevoEstadoDeCuenta = new File(rutaEstadoDeCuenta);
-        File registro = new File("src/MovimientosFMAT.txt");
+        File registro = new File(log_transacciones_path);
         try {
             Scanner lector = new Scanner(registro);
             nuevoEstadoDeCuenta.createNewFile();
@@ -51,6 +53,48 @@ public abstract class Cuenta {
 
     }
 
+    public void getEstadoDeCuenta(String fecha, Boolean inicio) {
+        String rutaEstadoDeCuenta = "src/estadoDeCuenta" + this.numeroDeCuenta + ".txt";
+        File nuevoEstadoDeCuenta = new File(rutaEstadoDeCuenta);
+
+        File registro = new File(this.log_transacciones_path);
+
+        try {
+            Scanner lector = new Scanner(registro);
+            nuevoEstadoDeCuenta.createNewFile();
+            FileWriter escritor = new FileWriter(nuevoEstadoDeCuenta);
+            if (inicio) {
+                boolean bandera = false;
+                while (lector.hasNextLine()) {
+                    String linea = lector.nextLine();
+                    if (bandera) {
+                        escritor.write("\n" + linea);
+                    } else if (linea.contains(fecha)) {
+                        escritor.write(linea);
+                        bandera = true;
+                    }
+                }
+                escritor.close();
+                lector.close();
+            } else {
+                escritor = new FileWriter(nuevoEstadoDeCuenta, true);
+                while (lector.hasNextLine()) {
+                    String linea = lector.nextLine();
+                    escritor.write(linea);
+                    if (linea.contains(fecha)) {
+                        escritor.close();
+                        lector.close();
+                        break;
+                    }
+                }
+
+            }
+        } catch (Exception e) {
+            System.out.println("Error al crear el estado de cuenta.");
+        }
+
+    }
+
     public void depositar(double deposito) {
         this.saldo += deposito;
 
@@ -75,12 +119,17 @@ public abstract class Cuenta {
                 System.out.println("La cuenta a la que intenta depositar no existe.");
             }
 
-            new Transferencia(numeroDeCuenta, destino.numeroDeCuenta, monto, concepto);
+            new Transferencia(this.numeroDeCuenta, destino.numeroDeCuenta, monto, concepto);
         }
+    }
+
+    public String getNumeroDeCliente() {
+        return this.numeroDeCliente;
     }
 
     @Override
     public String toString() {
-        return "\nCuenta: " + numeroDeCuenta + " - Saldo: $" + saldo;
+        return "\nCuenta: " + this.numeroDeCuenta + ", Saldo: $" + this.saldo + ", Numero de cliente: "
+                + this.numeroDeCliente;
     }
 }

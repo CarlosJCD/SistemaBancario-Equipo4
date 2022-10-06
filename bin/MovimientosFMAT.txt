@@ -1,3 +1,0 @@
-Fecha: 04/10/2022,Deposito - a804fcc3-0241-4bee-875f-208f021646a0,$30000.0,Cuenta de destino: 2fb6a809-005e-4c34-8674-e48cfe566ae6
-Fecha: 04/10/2022,Deposito - 79f805c1-29b4-4b90-8eef-ac445297ae26,$400.0,Cuenta de destino: 8d7d2be4-a9f0-43b0-8951-46d74ff40e47
-Fecha: 05/10/2022, Transferencia - 2a6f7038-79bd-44b7-9335-e0406ceb3b43, monto:400.0, Concepto: Despensa, Cuenta de origen: 2fb6a809-005e-4c34-8674-e48cfe566ae6, Cuenta de destino: 8d7d2be4-a9f0-43b0-8951-46d74ff40e47

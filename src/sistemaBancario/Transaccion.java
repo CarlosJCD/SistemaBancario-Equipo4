@@ -2,20 +2,21 @@ package sistemaBancario;
 
 import java.io.*;
 
-public abstract class Movimiento {
+public abstract class Transaccion {
 
     protected String id;
     protected String fecha;
     protected double monto;
     protected String numeroDeCuenta;
 
-    private final String path = "src/MovimientosFMAT.txt";
+    private final String path;
 
-    public Movimiento(String numeroDeCuenta, double monto) {
+    public Transaccion(String numeroDeCuenta, double monto) {
         this.id = Utileria.generarId();
         this.fecha = Utileria.generarFecha();
         this.numeroDeCuenta = numeroDeCuenta;
         this.monto = monto;
+        this.path = "src/Historial_Transacciones_" + numeroDeCuenta + ".txt";
     }
 
     public void guardarMovimiento() {

@@ -1,6 +1,6 @@
 package sistemaBancario;
 
-public class Deposito extends Movimiento {
+public class Deposito extends Transaccion {
 
     public Deposito(String numeroDeCuenta, double monto) {
         super(numeroDeCuenta, monto);
